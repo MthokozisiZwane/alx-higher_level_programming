@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     result = []
 
@@ -16,9 +17,9 @@ def list_division(my_list_1, my_list_2, list_length):
             except ZeroDivisionError:
                 result.append(0)
                 print("division by 0")
-            except TypeError as e:
+            except TypeError as te:
                 result.append(0)
-                print(e)
+                print(te)
             except IndexError:
                 result.append(0)
                 print("out of range")
