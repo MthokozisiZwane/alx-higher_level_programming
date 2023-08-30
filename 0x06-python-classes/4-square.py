@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 class Square:
     """
-    This class defines a square.
+    This class defines a square. That is
+    based on the previous definitioins of
+    of the class square
 
     Attributes:
         __size (int): The size of the square.
@@ -30,10 +32,10 @@ class Square:
         """
         return self.__size
 
-    @size.setter
-    def size(self, value):
-        """
-        Set the size of the square.
+    @size.setter:
+        def size(self, value):
+            """
+            Set the size of the square.
 
         Args:
             value (int): The size to set.
@@ -56,4 +58,3 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
-
