@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" Defines a node of a singly linked list"""
 
 class Node:
     """
