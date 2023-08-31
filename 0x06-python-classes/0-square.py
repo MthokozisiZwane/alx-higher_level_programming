@@ -1,12 +1,7 @@
 #!/usr/bin/python3
+"""Defines a square class."""
 
 
 class Square:
-    """
-    This class creates an empty square.
-    """
-    pass
-
-
-if __name__ == "__main__":
+    """An empty square class."""
     pass
