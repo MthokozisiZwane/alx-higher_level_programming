@@ -3,7 +3,7 @@
 
 
 class Square:
-    """A class that represents a square."""
+    """A class representing a square."""
     def __init__(self, size=0):
         """Initializes a new square instance.
 
@@ -29,7 +29,7 @@ class Square:
 
     @property
     def size(self):
-        """Gets or set the size of the square."""
+        """Gets or sets the size of the square."""
         return self.__size
 
     @size.setter
@@ -47,3 +47,11 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    def my_print(self):
+        """Print the square using '#' characters."""
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
