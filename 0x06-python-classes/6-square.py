@@ -23,7 +23,7 @@ class Square:
         if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(coordin, int) and
-                   coord >= 0 for coordin in position):
+                   coordin >= 0 for coordin in position):
             raise ValueError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
