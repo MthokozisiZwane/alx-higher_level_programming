@@ -1,0 +1,58 @@
+
+
+>>> print_square = __import__('4-print_square').print_square
+
+# Testing print_square function
+
+
+>>> print_square(4)
+####
+####
+####
+####
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+// if size zero,it prints nothing
+>>> print_square(0)
+>>> print_square(1)
+#
+// if size is less than zero
+>>> print_square(-1)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+// if size is not an integer
+>>> print_square("mtho")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+# if size is a float(not an int)
+
+    >>> print_square(5.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+# if size is a float and < 0(not int)
+ >>> print_square(-7.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+#At least one argument must be provided.
+
+# if no argument given
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
