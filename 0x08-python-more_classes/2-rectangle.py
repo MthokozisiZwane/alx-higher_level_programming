@@ -4,6 +4,7 @@
 
 class Rectangle:
     """ A class representing a rectangle"""
+
     def __init__(self, width=0, height=0):
         """ Initializes a new rectangle instance.
 
@@ -20,6 +21,7 @@ class Rectangle:
 
     @property
     def width(self):
+
         """ Gets the width of the rectangle"""
         return self.__width
 
