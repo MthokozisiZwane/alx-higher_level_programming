@@ -4,7 +4,13 @@
 
 class Rectangle:
 
-    """ A class representing a rectangle"""
+    """ A class representing a rectangle.
+    Attributes:
+        number_of_instances (int): The number of rectangle instances.
+        print_symbol (str): The symbol used for printing the rectangle.
+
+
+    """
     number_of_instances = 0
     print_symbol = '#'
 
