@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def magic_string(i):
-    return str("Best School") * i
+def magic_string(n):
+    return "BestSchool" * n
