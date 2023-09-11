@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" A rectanle class that inherits from BaseGeometry"""
 
 
 class BaseGeometry:
