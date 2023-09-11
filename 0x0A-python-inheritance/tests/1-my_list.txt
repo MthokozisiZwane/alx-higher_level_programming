@@ -1,0 +1,26 @@
+def test_list():
+    MyList = __import__('1-my_list').MyList
+
+    # Create an instance of MyList
+    my_list = MyList()
+
+    # Append integers to the list
+    my_list.append(1)
+    my_list.append(4)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(5)
+
+    # Check if the list is sorted after calling print_sorted()
+    assert str(my_list) == '[1, 4, 2, 3, 5]'
+    my_list.print_sorted()
+    assert str(my_list) == '[1, 2, 3, 4, 5]'
+
+    # Append more integers to test
+    my_list.append(10)
+    my_list.append(7)
+    assert str(my_list) == '[1, 2, 3, 4, 5, 10, 7]'
+    my_list.print_sorted()
+    assert str(my_list) == '[1, 2, 3, 4, 5, 7, 10]'
+
+test_list()
