@@ -9,7 +9,10 @@ class BaseGeometry:
         """Raises an Exception with message 'area() is not implemented'."""
         raise Exception("area() is not implemented")
 
+    """ validates an integer"""
+
     def integer_validator(self, name, value):
+
         """
         Validates the 'value' parameter:
         - 'name' must be a string
@@ -22,6 +25,9 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
+""" a rectangle class"""
+
+
 class Rectangle(BaseGeometry):
     """A class representing a rectangle."""
 
@@ -32,13 +38,20 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
+    """ An area class"""
+
     def area(self):
         """Calculates and returns the area of the rectangle."""
         return self.__width * self.__height
 
+    """ prints string representation"""
+
     def __str__(self):
         """Returns a string representation of the rectangle."""
         return f"[Rectangle] {self.__width}/{self.__height}"
+
+
+""" a square class"""
 
 
 class Square(Rectangle):
