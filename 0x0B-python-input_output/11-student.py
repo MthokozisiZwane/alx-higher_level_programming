@@ -28,3 +28,8 @@ class Student:
             dict: The dictionary representation of the student.
         """
         return self.__dict__
+
+    def reload_from_json(self, json_data):
+        self.first_name = json_data['first_name']
+        self.last_name = json_data['last_name']
+        self.age = json_data['age']
