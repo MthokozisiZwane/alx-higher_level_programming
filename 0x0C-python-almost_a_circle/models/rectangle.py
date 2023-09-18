@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+importing the Base class
+"""
 
 from models.base import Base
 
