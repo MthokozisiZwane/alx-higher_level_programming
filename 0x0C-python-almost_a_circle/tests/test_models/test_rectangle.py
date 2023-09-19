@@ -1,6 +1,10 @@
 import unittest
 from models.rectangle import Rectangle
 
+from io import StringIO
+import sys
+import io
+
 
 class TestRectangleAttributes(unittest.TestCase):
     def test_width_validation(self):
@@ -59,6 +63,34 @@ class TestRectangleAttributes(unittest.TestCase):
     #def test_area_zero(self):
      #   r = Rectangle(0, 5)
       #  self.assertEqual(r.area(), 0) 
+      
+      
+"""
+      
+Test disply
+      
+"""
+class test_display_attributes(unittest.TestCase):
+    
+    def setUp(self):
+        
+        sys.stdout = io.StringIO()
+
+    def tearDown(self):
+        sys.stdout = sys.__stdout__
+
+    def test_display(self):
+        r = Rectangle(3, 2)
+        expected_output = "###\n###\n"
+        r.display()
+        self.assertEqual(sys.stdout.getvalue(), expected_output)
+
+    def test_display_with_offset(self):
+        r = Rectangle(3, 2, 2, 1)
+        expected_output = "###\n###\n"
+        r.display()
+        self.assertEqual(sys.stdout.getvalue(), expected_output)
+          
         
 
 if __name__ == "__main__":
