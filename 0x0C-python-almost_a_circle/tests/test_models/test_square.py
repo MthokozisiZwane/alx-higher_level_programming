@@ -36,6 +36,33 @@ class TestSquare(unittest.TestCase):
         with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
             s.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+"""
+Testing for getter and setter methods
+"""
+class TestSquare2(unittest.TestCase):
+    def test_size_getter(self):
+        s = Square(5)
+        self.assertEqual(s.size, 5)
+
+    def test_size_setter(self):
+        s = Square(5)
+        s.size = 10
+        self.assertEqual(s.size, 10)
+
+    def size_setter_with_string(self):
+        s = Square(5)
+        with self.assertRaises(TypeError):
+            s.size = "9"
+
+    def test_sq_area(self):
+        s = Square(5)
+        self.assertEqual(s.area(), 25)
+
+    def test_string(self):
+        s = Square(5, 2, 2, 1)
+        self.assertEqual(str(s), "[Square] (1) 2/2 - 5")
+
             
 if __name__ == '__main__':
     unittest.main()
