@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""
-This module defines the Rectangle class, which inherits from the Base class.
-"""
+
 
 from models.base import Base
 
 
 class Rectangle(Base):
     """
-    Represents a rectangle.
+    A class representing a rectangle that inherits from the Base class.
 
     Attributes:
         width (int): The width of the rectangle.
@@ -27,7 +25,7 @@ class Rectangle(Base):
             height (int): The height of the rectangle.
             x (int, optional): The x-coordinate of the \
                     rectangle's position (default is 0).
-            y (int, optional): The y-coordinate of the\
+            y (int, optional): The y-coordinate of the \
                     rectangle's position (default is 0).
             id (int, optional): The unique identifier \
                     for the rectangle (default is None).
@@ -55,7 +53,15 @@ class Rectangle(Base):
 
         Args:
             value (int): The new width value.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -75,7 +81,15 @@ class Rectangle(Base):
 
         Args:
             value (int): The new height value.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -84,7 +98,7 @@ class Rectangle(Base):
         Gets the x-coordinate of the rectangle's position.
 
         Returns:
-            int: The x-coordinate of the rectangle's position.
+            int: The x-coordinate of the rectangle.
         """
         return self.__x
 
@@ -95,7 +109,15 @@ class Rectangle(Base):
 
         Args:
             value (int): The new x-coordinate value.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -104,7 +126,7 @@ class Rectangle(Base):
         Gets the y-coordinate of the rectangle's position.
 
         Returns:
-            int: The y-coordinate of the rectangle's position.
+            int: The y-coordinate of the rectangle.
         """
         return self.__y
 
@@ -115,5 +137,13 @@ class Rectangle(Base):
 
         Args:
             value (int): The new y-coordinate value.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
