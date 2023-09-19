@@ -3,8 +3,6 @@ from models.rectangle import Rectangle
 
 from io import StringIO
 import sys
-import io
-
 
 class TestRectangleAttributes(unittest.TestCase):
     def test_width_validation(self):
@@ -70,28 +68,28 @@ class TestRectangleAttributes(unittest.TestCase):
 Test disply
       
 """
-class test_display_attributes(unittest.TestCase):
+class TestDisplayAttributes(unittest.TestCase):
     
-    def setUp(self):
-        
-        sys.stdout = io.StringIO()
-
-    def tearDown(self):
-        sys.stdout = sys.__stdout__
-
     def test_display(self):
-        r = Rectangle(3, 2)
-        expected_output = "###\n###\n"
+        r = Rectangle(4, 6)
+        expected_result = "####\n" * 6
+        obtained_result = StringIO()
+        sys.stdout = obtained_result
         r.display()
-        self.assertEqual(sys.stdout.getvalue(), expected_output)
-
-    def test_display_with_offset(self):
-        r = Rectangle(3, 2, 2, 1)
-        expected_output = "###\n###\n"
-        r.display()
-        self.assertEqual(sys.stdout.getvalue(), expected_output)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(obtained_result.getvalue(), expected_result)
+      
+     
           
-        
+"""
+Test overriding __str__
+"""
 
+class TestOverridingStr(unittest.TestCase):
+
+    def test_string_representation(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+        
 if __name__ == "__main__":
     unittest.main()
