@@ -166,18 +166,20 @@ class Rectangle(Base):
     def display(self):
         """
         Prints the Rectangle instance as a rectangle of '#' characters.
+        Takes care of x and y positions
         """
-        for _ in range(self.__height):
-            print('#' * self.__width)
-
-    """
-    Overriding the __str___ method
-    """
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
-        Returns a string representation of Rectangle instance
+        Returns a string representation of the rectangle instance
 
+        Returns:
+            str: A string representing the rectangle instance
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".\
-            format(self.id, self.x, self.y, self.width, self.height)
+
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))
