@@ -183,3 +183,24 @@ class Rectangle(Base):
 
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """
+        Updates the rectangle instance with given arguments
+
+        Args:
+            *args: Variable number of args(id, width, height, x, y)
+        """
+
+        if args:
+            arg_count = len(args)
+            if arg_count >= 1:
+                self.id = args[0]
+            if arg_count >= 2:
+                self.width = args[1]
+            if arg_count >= 3:
+                self.height = args[2]
+            if arg_count >= 4:
+                self.x = args[3]
+            if arg_count >= 5:
+                self.y = args[4]
