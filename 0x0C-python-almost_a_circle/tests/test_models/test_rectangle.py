@@ -1,6 +1,6 @@
 import unittest
 from models.rectangle import Rectangle
-#from rectangle2 import Rectangle #this line only works on spyder
+
 
 class TestRectangleAttributes(unittest.TestCase):
     def test_width_validation(self):
@@ -38,6 +38,28 @@ class TestRectangleAttributes(unittest.TestCase):
         with self.assertRaises(TypeError) as cm:
             r = Rectangle(2, 2, 2, "invalid")
         self.assertEqual(str(cm.exception), "y must be an integer")
+        
+    """
+    tests for the area
+    """
+    
+    def test_area_positive(self):
+        r = Rectangle(3, 2)
+        self.assertEqual(r.area(), 6)
+
+    #def test_area_negative(self):
+     #   r = Rectangle(3, -2)
+      #  with self.assertRaises(ValueError):
+       #     r.area()
+            
+    def test_area_large(self):
+        r = Rectangle(1000, 1000)
+        self.assertEqual(r.area(), 1000000)
+        
+    #def test_area_zero(self):
+     #   r = Rectangle(0, 5)
+      #  self.assertEqual(r.area(), 0) 
+        
 
 if __name__ == "__main__":
     unittest.main()
