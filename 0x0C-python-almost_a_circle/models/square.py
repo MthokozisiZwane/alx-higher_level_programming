@@ -60,6 +60,45 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the Square instance.
+
+        This method allows you to update the attributes of the Square \
+                instance using either positional \
+                arguments or keyword arguments.
+
+        Args:
+            *args: Variable number of positional arguments. \
+                    The first argument updates the 'id' attribute, the \
+                    second updates 'size', the third updates 'x', \
+                    and the fourth updates 'y', if provided.
+
+            **kwargs: Arbitrary keyword arguments. \
+                    You can specify attribute-value pairs as keyword \
+                    arguments to update specific attributes. \
+                    Valid attribute names are 'id', 'size', 'x', and 'y'.
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
     def __str__(self):
         """
         Returns a string representation of the Square instance.
