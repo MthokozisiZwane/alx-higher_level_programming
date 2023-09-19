@@ -1,7 +1,13 @@
 #!/usr/bin/python3
 
-
+"""
+importing Base from base
+"""
 from models.base import Base
+
+"""
+Update of class inheriting from Base
+"""
 
 
 class Rectangle(Base):
