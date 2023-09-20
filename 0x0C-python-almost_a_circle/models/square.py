@@ -114,7 +114,8 @@ class Square(Rectangle):
         Return the dictionary representation of the square instance
 
         Returns:
-            dict: A dictionary containing attributes of the square instance
+            dict: A dictionary containing attributes of the square \
+                    instance  including 'id,' 'width,' 'x,' and 'y.'
         """
         return {
                 'id': self.id,
