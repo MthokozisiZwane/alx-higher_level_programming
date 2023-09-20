@@ -79,6 +79,19 @@ class TestFromJsonString(unittest.TestCase):
         result = Base.from_json_string(json_string)
         self.assertEqual(result, [{"id": 1, "width": 10, "height": 5}, {"id": 2, "width": 5, "height": 2}])
 
+"""
+testing for the create method
+"""
+class TestCreateMethod(unittest.TestCase):
+
+    def test_create_rectangle(self):
+        r1 = Rectangle(3, 5, 1)
+        r1_dict = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dict)
+        
+        self.assertIsInstance(r2, Rectangle)
+        self.assertIsNot(r1, r2)
+        self.assertEqual(r1, r1)
 
 if __name__ == '__main__':
     unittest.main()
