@@ -108,3 +108,17 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}"\
             .format(self.id, self.x, self.y, self.width)
+
+    def to_dictionary(self):
+        """
+        Return the dictionary representation of the square instance
+
+        Returns:
+            dict: A dictionary containing attributes of the square instance
+        """
+        return {
+                'id': self.id,
+                'width': self.width,
+                'x': self.x,
+                'y': self.y
+                }
