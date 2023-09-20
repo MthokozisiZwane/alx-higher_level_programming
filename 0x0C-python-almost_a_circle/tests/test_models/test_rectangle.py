@@ -182,5 +182,26 @@ class TestUpdatedUpdate(unittest.TestCase):
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
 
+""" 
+testing for dictionary representation
+"""
+class TestRectangleToDictionary(unittest.TestCase):
+    
+    def test_to_dictionary(self):
+        
+        r = Rectangle(10, 2, 1, 9)
+        r_dict = r.to_dictionary()
+
+        expected_dict = {
+            'id': 12,
+            'width': 10,
+            'height': 2,
+            'x': 1,
+            'y': 9
+        }
+
+        self.assertEqual(r_dict, expected_dict)
+
+
 if __name__ == "__main__":
     unittest.main()
