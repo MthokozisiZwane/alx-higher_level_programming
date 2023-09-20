@@ -63,5 +63,22 @@ class TestSaveToFile(unittest.TestCase):
 
         self.assertEqual(actual_set, expected_set)
 
+class TestFromJsonString(unittest.TestCase):
+    def test_from_json_string_empty(self):
+        json_string = ""
+        result = Base.from_json_string(json_string)
+        self.assertEqual(result, [])
+
+    def test_from_json_string_none(self):
+        json_string = None
+        result = Base.from_json_string(json_string)
+        self.assertEqual(result, [])
+
+    def test_from_json_string_valid(self):
+        json_string = '[{"id": 1, "width": 10, "height": 5}, {"id": 2, "width": 5, "height": 2}]'
+        result = Base.from_json_string(json_string)
+        self.assertEqual(result, [{"id": 1, "width": 10, "height": 5}, {"id": 2, "width": 5, "height": 2}])
+
+
 if __name__ == '__main__':
     unittest.main()
