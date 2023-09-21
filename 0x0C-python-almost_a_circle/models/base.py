@@ -84,6 +84,13 @@ class Base:
         """
         It loads JSON data from a file and creates instances.
         It returns a list of instances
+        The filename must be: <Class name>.json - \
+                example: Rectangle.json
+        If the file doesn’t exist, return an empty list
+        Otherwise, return a list of instances - the type of these \
+                instances depends on cls (current class using this method)
+        You must use the from_json_string and \
+                create methods (implemented previously)
         """
         file_name = cls.__name__ + ".json"
         instances = []
