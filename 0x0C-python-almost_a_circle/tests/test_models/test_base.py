@@ -1,6 +1,7 @@
 # tests/test_base.py
 import unittest
 import json
+from models.square import Square
 from models.rectangle import Rectangle
 #from models.base import Base
 
@@ -92,6 +93,38 @@ class TestCreateMethod(unittest.TestCase):
         self.assertIsInstance(r2, Rectangle)
         self.assertIsNot(r1, r2)
         self.assertEqual(r1, r1)
+
+
+class TestLoadFromFile(unittest.TestCase):
+    def setUp(self):
+        # Create test data for saving to the file
+        self.r1 = Rectangle(10, 7, 2, 8)
+        self.r2 = Rectangle(2, 4)
+        self.list_rectangles_input = [self.r1, self.r2]
+        Rectangle.save_to_file(self.list_rectangles_input)
+
+        self.s1 = Square(5)
+        self.s2 = Square(7, 9, 1)
+        self.list_squares_input = [self.s1, self.s2]
+        Square.save_to_file(self.list_squares_input)
+
+    def test_load_rectangle_from_file(self):
+        # Load rectangles from file
+        list_rectangles_output = Rectangle.load_from_file()
+
+        # Check if loaded rectangles match the input
+        self.assertEqual(len(list_rectangles_output), len(self.list_rectangles_input))
+        for rect1, rect2 in zip(self.list_rectangles_input, list_rectangles_output):
+            self.assertEqual(rect1, rect1)
+
+    def test_load_square_from_file(self):
+        # Load squares from file
+        list_squares_output = Square.load_from_file()
+
+        # Check if loaded squares match the input
+        self.assertEqual(len(list_squares_output), len(self.list_squares_input))
+        for square1, square2 in zip(self.list_squares_input, list_squares_output):
+            self.assertEqual(square1, square1)
 
 if __name__ == '__main__':
     unittest.main()
