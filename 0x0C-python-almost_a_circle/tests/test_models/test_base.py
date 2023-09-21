@@ -1,6 +1,7 @@
 # tests/test_base.py
 import unittest
 import json
+import os
 from models.square import Square
 from models.rectangle import Rectangle
 #from models.base import Base
@@ -125,6 +126,36 @@ class TestLoadFromFile(unittest.TestCase):
         self.assertEqual(len(list_squares_output), len(self.list_squares_input))
         for square1, square2 in zip(self.list_squares_input, list_squares_output):
             self.assertEqual(square1, square1)
+
+class TestCSVMethods(unittest.TestCase):
+    def test_save_and_load_rectangles(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file_csv()
+
+        for r_input, r_output in zip(list_rectangles_input, list_rectangles_output):
+            self.assertEqual(r_input, r_output)
+
+    def test_save_and_load_squares(self):
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_squares_input = [s1, s2]
+
+        Square.save_to_file_csv(list_squares_input)
+        list_squares_output = Square.load_from_file_csv()
+
+        for s_input, s_output in zip(list_squares_input, list_squares_output):
+            self.assertEqual(s_input, s_input)
+
+    def tearDown(self):
+        # Clean up CSV files after tests
+        for cls in [Rectangle, Square]:
+            filename = cls.__name__ + ".csv"
+            if os.path.exists(filename):
+                os.remove(filename)
 
 if __name__ == '__main__':
     unittest.main()
