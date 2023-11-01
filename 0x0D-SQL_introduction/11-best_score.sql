@@ -3,5 +3,5 @@
 -- Results should display both the score and the name (in this order)
 -- Records should be ordered by score (top first)
 
-SELECT score, name FROM hbtn_0c_0.second_table WHERE score >= 10 ORDER BY score DESC;
+SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC;
 
