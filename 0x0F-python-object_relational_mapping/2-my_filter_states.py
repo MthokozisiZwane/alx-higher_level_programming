@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Script to display states based on user input from MySQL database
 """
@@ -7,13 +8,8 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Checking if the number of arguments is correct
-    if len(sys.argv) != 5:
-        print("Usage: {} < username > < password > <
-              database > < state name >".format(sys.argv[0]))
-        sys.exit(1)
 
-    # Connection to the database
+# Connection to the database
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
