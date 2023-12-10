@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-The script lists 10 commits (from most recent to oldest)
-of a GitHub repository.
+Lists 10 commits (from most recent to oldest) of rails GitHub repository.
 """
 
 import requests
@@ -11,8 +10,7 @@ if __name__ == "__main__":
     repository_name = sys.argv[1]
     owner_name = sys.argv[2]
 
-    url = f"https://api.github.com/\
-    repos/{owner_name}/{repository_name}/commits"
+    url = f"https://api.github.com/repos/{rails}/{rails}/commits"
     params = {'per_page': 10}
 
     response = requests.get(url, params=params)
