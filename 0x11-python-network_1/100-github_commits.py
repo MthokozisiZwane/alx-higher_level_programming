@@ -7,8 +7,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    repository_name = sys.argv[1]
-    owner_name = sys.argv[2]
+    repository_name = "rails"
+    owner_name = "rails"
 
     url = f"https://api.github.com/repos/{rails}/{rails}/commits"
     params = {'per_page': 10}
